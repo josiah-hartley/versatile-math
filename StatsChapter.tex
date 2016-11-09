@@ -1,0 +1,192 @@
+\documentclass[9pt,letter,twoside,openright]{memoir}
+\input{PreCalcLayout.tex}
+\graphicspath{ {./Images/} }
+
+\usetikzlibrary{arrows,decorations.markings,positioning}
+\newcommand{\tikzmark}[2]{\tikz[overlay, remember picture] \node[inner sep=5pt, outer sep=5pt, anchor=base] (#1) {#2};}
+
+\begin{document}
+\frontmatter
+\newgeometry{margin=1.25in}
+\pagestyle{empty}
+\titleBC
+\frontmatter
+
+\input{FrontMatter.tex}
+%\clearpage
+\setcounter{tocdepth}{1}
+\newgeometry{margin=1.25in}
+\tableofcontents*
+\mainmatter
+\restoregeometry
+\pagestyle{doc}
+\begin{comment}
+\chapter{Financial Mathematics}
+\begin{center}\includegraphics[width=\textwidth]{NYSE}\end{center}
+
+In 2007, the U.S. mortgage bond market led to a financial crisis when thousands of subprime mortgages defaulted, leading to a crash in the market that had a far-reaching impact on markets around the world, and the economy was plunged into a recession from 2007 to 2009.  Although the causes were complex and varied, at the root of the problem were these mortgages that were offered to borrowers who could not afford them, and written in complicated terms that obscured the cost.
+
+The purpose of this chapter is to train you to be a savvy consumer.  No other area in this book will be as immediately and broadly applicable as this material on financial mathematics.  Here you'll begin to apply mathematical techniques to everyday financial management.  How much should you budget for a new car?  How is your federal income tax calculated?  When should you start saving for retirement?  These questions and ones like them will find answers in this chapter, as we investigate everything from sales tax to credit cards.  By understanding your personal finances, you can protect yourself and take control of your financial future.
+\vfill
+\pagebreak
+
+\section{Percents and Their Applications}
+\input{PercentsAndApplications2.tex}
+
+\section{Income Tax}
+\input{IncomeTax2.tex}
+
+\section{Simple and Compound Interest}
+\input{SimpleAndCompoundInterest2.tex}
+
+\section{Annuities}
+\input{Annuities2.tex}
+\vfill
+\pagebreak
+
+\section{Installment Loans and Credit Cards}
+\input{InstallmentLoansAndCreditCards2.tex}
+
+\chapter{Growth Models}
+\begin{center}\includegraphics[width=\textwidth, height=4in]{Growth1}\end{center}
+From population growth to economic growth, from the study of vibrations to heat transfer, mathematical models of growth and decay provide an important application, giving insight and predicting what the future will hold.
+
+Of course, it is crucial to understand that no mathematical model is perfect.  There will always be a trade-off between the accuracy of a model and its simplicity.  The simpler a model, the more easily we can make predictions with it, but there will be more error in the approximation.  On the other hand, more precise models may be more difficult---or even impossible---to solve.  You should always remember, though, that every model is at best an imperfect representation of the real world, and there will always be some inherent error between what the model predicts and what actually occurs.
+
+The world is too complex to describe in every detail, so every model has simplifying assumptions, and these assumptions need to be spelled out.  A good model uses reasonable assumptions to provide the right balance of simplicity and accuracy.
+\vfill
+\pagebreak
+
+\section{Linear Models}
+\input{LinearGrowth2.tex}
+
+\section{Exponential Models}
+\input{ExponentialGrowth2.tex}
+
+\section{Logistic Models}
+\input{LogisticGrowth2.tex}
+\end{comment}
+\setcounter{chapter}{2}
+\setcounter{page}{85}
+\chapter{Statistics}
+\begin{center}\includegraphics[width=\textwidth]{StatChapter}\end{center}
+
+There's a popular joke among statisticians that 64.8\% of all statistics are made up on the spot. How can you tell the difference between good and bad statistics? 
+Where do the numbers come from? How is data collected? No other branch of mathematics has a more tremendous impact on our lives than the field of statistics. 
+Statistics are everywhere, from crime rates in your city to weight percentiles for children on growth charts. When a research team is testing a new treatment for a disease, they can use statistics to make conclusions based on a relatively small trial and show that there is good evidence that their drug is effective. Statistics allowed prosecutors in the 1950's 
+and 60's to demonstrate that racial bias existed in jury panels. In this chapter, you will get a glimpse into this important subject, understanding the essentials and learning to become a wise consumer of statistics. 
+\vfill
+\pagebreak
+
+\section{Sampling and Graphs}
+\input{SamplingAndGraphs2.tex}
+
+\section{Measures of Center}
+\input{MeasuresOfCenter2.tex}
+
+\section{Measures of Spread}
+\input{MeasuresOfSpread2.tex}
+
+\section{The Normal Distribution}
+\input{NormalDistribution2.tex}
+
+\begin{comment}
+\chapter{Probability}
+\begin{center}
+\includegraphics[width=\textwidth]{casino}
+\end{center}
+
+It is often necessary to ``guess'' about the outcome of an event in order to make a decision. Politicians study polls to guess
+their likelihood of winning an election. Teachers choose a particular course of study based on what they think students can
+comprehend. Doctors choose the treatments needed for various diseases based on their assessment of likely results. You
+may have visited a casino where people play games chosen because of the belief that the likelihood of winning is good. You
+may have chosen your course of study based on the probable availability of jobs.
+
+You have, more than likely, used probability. In fact, you probably have an intuitive sense of probability. Probability deals with the chance of an event occurring. Whenever you weigh the odds of whether or not to do your homework or to study for an exam, you are using probability. In this chapter, you will learn how to solve probability problems using a systematic approach.
+\vfill
+\pagebreak
+
+\section{Basic Concepts of Probability}
+\input{BasicConcepts2.tex}
+
+\section{The Addition Rule and the Rule of Complements}
+\input{Additionrule2}
+
+\section{The Multiplication Rule and Conditional Probability}
+\input{Multiplicationrule2}
+
+\section{Counting Methods}
+\input{Counting2}
+
+\chapter{Linear Programming}
+\begin{center}\includegraphics[width=\textwidth]{BerlinAirlift}\end{center}
+
+After World War II, the victorious Allies divided Germany into four sectors, with one Allied nation administering each region.  Berlin, located deep within East Germany, controlled by the Soviet Union, was also split into four regions, with the United States, the United Kingdom, and France controlling the western half of the city and the Soviet Union controlling the eastern half.
+
+However, Stalin wouldn't rest until all of Germany was under Soviet control, and in 1948, in an effort to drive the other Allied forces out without declaring open war, the USSR blockaded West Berlin, cutting off road, rail, and canal lines into the city from West Germany.
+
+The Allies responded with an immense effort known as the Berlin Airlift, eventually moving 8,000 tons of food and fuel \textit{per day} into West Berlin in massive cargo planes.  To handle the incredibly complex logistics of this process, the Allies turned to a new area of applied mathematics known as linear programming, the topic we'll investigate in this chapter.  Linear programming, part of a wider field known as \textit{mathematical optimization}, is used today in fields ranging from business and economics to engineering and manufacturing, solving problems involving the allocation of limited resources.
+\vfill
+\pagebreak
+
+\section{Linear Functions and Their Graphs}
+\input{LinearGraphs2.tex}
+
+\section{Systems of Linear Equations}
+\input{SystemsOfEquations2.tex}
+
+\section{Systems of Linear Inequalities}
+\input{SystemsOfInequalities2.tex}
+
+\section{Linear Programming}
+\input{LinearProgrammingSection2.tex}
+
+\chapter{Logic}
+\begin{center}\includegraphics[width=\textwidth]{LogicChapter1}\end{center}
+
+At\marginnote{\includegraphics[width=0.9in]{GeorgeBoole}\\George Boole} its heart, every computer circuit---like the memory chip shown above---runs on relatively simple rules of logic.  A 19th-century English mathematician named George Boole described a set of rules for abstract logic that seemed to have little practical significance at the time.  Nearly a hundred years later, though, a young American student named Claude Shannon, a master's candidate at MIT, noticed that Boole's algebra could be applied to analyzing circuits, leading to tremendous advances in this new field.  Today, we rely heavily on computers, and it is intriguing to peer behind the curtain a bit and see how they operate.
+
+Computers recognize two states, often written 1 and 0 (or ON and OFF, or TRUE and FALSE).  These two states correspond to a high voltage and a low voltage, respectively; early computers used vacuum tubes to represent these states, but the transistor, invented in 1947 at Bell Labs, replaced the vacuum tube as a cheaper, smaller, more reliable alternative.
+
+In this chapter, we will study the fundamentals of logic.  We will use values of T and F to represent\marginnote{\includegraphics[width=0.9in]{ClaudeShannon}\\Claude Shannon} true and false statements, but everything that we will consider can be applied to computer circuits by simply substituting 1 for T and 0 for F.  We will learn how to translate statements in words into symbolic form and how to manipulate that symbolic form.  Finally, we will consider complete arguments, which are series of statements that lead to conclusions.  We will test whether various arguments are valid or not, and in doing so, we will begin to see the importance of being careful when making an argument.
+\vfill
+\pagebreak
+
+\section{Statements and Logical Operations}
+\input{StatementsOperations.tex}
+
+\section{Conditionals and Equivalence}
+\input{ConditionalsEquivalence.tex}
+
+\section{Logic Rules}
+\input{LogicRules.tex}
+
+\section{Arguments}
+\input{Arguments.tex}
+
+\chapter{Set Theory}
+\begin{center}\includegraphics[width=\textwidth]{SetTheoryChapter1}\end{center}
+
+The Library of Congress, the national library of the United States, contains a vast collection of works that fill over 800 miles of bookshelves, and somewhere around 10,000 new works are added each day.  The question naturally arises: how can anything be found in such a huge, diverse collection?  The answer, of course, lies in categorization, or organization.
+
+Librarians, among others (like grocery store planners, for instance), have to be experts at categorization, in order to arrange their collections in such a way that items are easy to find.  The basics of this skill are natural, though; you have an intuitive idea of how to categorize objects in a way that makes sense.  When we categorize, what we're really doing is creating \textbf{sets}.  For instance, a library has a fiction section, where the set of novels in their collection are placed.  Within that set of novels, there may be a \textbf{subset} of young adult fiction, a subset of historical fiction, and so on.  As a student, you can be categorized by your major, the classes you're taking, your year in school, etc., each of which can be expressed as a set.
+
+It turns out that much of higher mathematics (which we don't do in this book) uses the terms and concepts of set theory extensively.  We'll only see the basic structure of set theory in this chapter, but this way of thinking is valuable to those who study mathematics in more detail.
+
+In fact, if you compare this chapter to the chapter on logic, you'll notice some similar ideas coming up, which illustrates the ties that set theory has to other areas of mathematics.
+\vfill
+\pagebreak
+
+\section{Basic Concepts}
+\input{SetConcepts.tex}
+
+\section{Set Operations}
+\input{SetOperations.tex}
+
+\section{Properties of Set Operations}
+\input{SetProperties.tex}
+
+\section{Survey Problems}
+\input{SurveyProblems.tex}
+\end{comment}
+\end{document}

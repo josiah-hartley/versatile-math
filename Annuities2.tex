@@ -1,0 +1,508 @@
+\setcounter{ExampleCounter}{1}
+Suppose you're trying to save for retirement.  If you had \$500,000 today, you could invest that and perhaps in twenty years, you might have a nice retirement nest egg.  However, this isn't the situation that most of us find ourselves in---having \$500,000 in disposable cash is not in the typical American's experience.
+
+How, then, do we save for retirement?  The answer is a \textbf{savings annuity}, which is an interest-bearing account into which we deposit regular payments.  By taking a small portion of each paycheck and depositing it into a 401(k) plan or individual retirement account (IRA), we can take advantage of the power of compounding to grow our retirement savings.  The future value of a savings annuity is the sum of all the deposits plus whatever interest accrued.
+
+\begin{example}[https://www.youtube.com/watch?v=KOIRAWGh9vM]{Savings Annuity}
+Suppose you deposit \$100 into a savings account at the end of each year.  If you earn 5\% interest compounded annually, how much will the account hold at the end of 3 years?  How much interest did the account earn?\\
+
+\marginnote{\bfseries Solution}
+At the end of the first year, the account holds the \$100 that you deposit then:
+\[F_1 = \$100\]
+The second year, this \$100 earns interest, plus you deposit another \$100 at the end of the year:
+\[F_2 = \$100(1+0.05) + \$100 = \$205\]
+The third year, this \$205 earns interest, plus you deposit another \$100 at the end of the year:
+\[F_3 = \$205(1+0.05) + \$100 = \$315.25\]
+We could continue this pattern indefinitely, but each year, we only need to use the simple interest formula to see how much the previous year's balance has grown, and then add in that year's deposit.\\
+
+At the end of the three years, the account holds \$315.25, and since we deposited a total of \$300 (\$100 each year for 3 years), the account earned a total of \$15.25 in interest.
+\end{example}
+
+\subsection{Savings Annuity Formula}
+In theory, we could use the procedure of the last example to calculate the value of an annuity after any length of time.  However, that process quickly gets tedious, so we'd like to have a formula instead.\\
+
+\textit{Fair warning, though: the derivation of this formula might seem confusing, so if you'd like, you can skip down to the formula at the end.}
+
+Suppose you deposit $P$ dollars into a savings annuity each year, and this account earns an interest rate of $r$ compounded annually (we'll handle the case of other compounding periods after we get to the formula).  At the end of the first year, the account contains $P$ dollars:
+\[F_1 = P\]
+This principal earns interest the second year [growing to $P(1+r)$] so at the end of the second year, the account holds that plus the newly deposited $P$:
+\[F_2 = P+P(1+r)\]
+Now, in the third year, this balance earns interest again: $(P+P(1+r))(1+r) = P(1+r) + P(1+r)(1+r)$, so the balance at the end of the third year is this plus another $P$:
+\[F_3 = P + P(1+r) + P(1+r)^2\]
+We can now see the pattern, so we can jump to the arbitrary case; at the end of $t$ years, the account will hold
+\begin{equation}
+F_t = P + P(1+r) + P(1+r)^2 + P(1+r)^3 + \ldots + P(1+r)^{t-1}
+\end{equation}
+
+Now comes the tricky part: we want a simpler formula for $F_t$, so we solve for it in an unexpected way.  First, multiply both sides of the last line by $(1+r)$:
+\begin{equation}
+F_t + F_tr = P(1+r) + P(1+r)^2 + P(1+r)^3 + \ldots + P(1+r)^{t-1} + P(1+r)^t
+\end{equation}
+Next, subtract equation (1.1) from equation (1.2), subtracting on both sides of the equation.  Notice that as we do so, almost all of the terms cancel:
+\[F_tr = P(1+r)^t-P = P\left[(1+r)^t-1\right]\]
+Finally, divide both sides of the equation by $r$ to isolate $F_t$:
+\[F_t = \dfrac{P\left[(1+r)^t-1\right]}{r}\]
+
+What if we make deposits monthly rather than yearly?  We'll assume, first of all, that the rate at which we make deposits and the rate at which interest is compounded is the same; in other words, we won't make monthly deposits to an account that compounds weekly, for instance.  If the compounding and the rate of deposit are both represented by $n$, we change this formula in the same way that we changed the compound interest formula to handle different compounding periods:
+\begin{itemize}
+\item Replace $r$, the annual interest rate, with $\dfrac{r}{n}$, splitting it into compounding periods.
+\item Replace $t$ with $nt$ to account for the interest compounding $n$ times per year for $t$ years.
+\end{itemize}
+This leads to the general formula:
+\[F=\dfrac{P\left[\left(1+\dfrac{r}{n}\right)^{nt}-1\right]}{\left(\dfrac{r}{n}\right)}\]
+
+\begin{formula}{Summary: The Future Value of a Savings Annuity}
+If regular deposits of $P$ are made once a year into an annuity paying an interest rate of $r$ compounded annually, the future value of the annuity at the end of $t$ years is given by
+\[F = \dfrac{P\left[(1+r)^t-1\right]}{r}\]
+
+If regular deposits of $P$ are made $n$ times per year into an annuity paying an interest rate of $r$ compounded $n$ times per year, the future value of the annuity at the end of $t$ years is given by
+\[F=\dfrac{P\left[\left(1+\dfrac{r}{n}\right)^{nt}-1\right]}{\left(\dfrac{r}{n}\right)}\]
+
+Notice that here we use $P$ to mean the amount that is regularly deposited, rather than the present value, a lump sum deposited now.
+\end{formula}
+
+Note: annuities assume that you put money in an account on a regular schedule (every month, every quarter, every year, etc.) and let it sit in the account earning interest.  This is different from basic compound interest, because that assumes that you deposit money in the account once and let it sit there earning interest.
+\vfill
+\pagebreak
+
+\begin{example}[https://www.youtube.com/watch?v=X1oXL3ZjcCU]{Traditional IRA}
+A traditional individual retirement account (IRA) is a retirement account in which the money you invest is tax-exempt (you can deduct your contributions on your income tax return) until you withdraw it.  Thus, taxes are deferred until you retire.  If you deposit \$100 each month into an IRA earning 6\% interest, how much will you have in the account after 20 years?\\
+
+Organize the given information:
+\begin{center}
+\begin{tabular}{r l l}
+$P$ & \$100 & The regular deposit\\
+$r$ & 0.06 & 6\% annual rate\\
+$n$ & 12 & Deposits are made monthly\\
+$t$ & 20 & Deposits are made for 20 years
+\end{tabular}
+\end{center}
+
+Putting it all together in the formula:
+\begin{align*}
+F &= \dfrac{\$100\left[\left(1+\dfrac{0.06}{12}\right)^{(12)(20)}-1\right]}{\left(\dfrac{0.06}{12}\right)}\\
+&= \$46,204.09 \approx \$46,200
+\end{align*}
+
+Notice\marginnote{$(\$100)(12)(24) = \$24,000$} that you deposited \$100 every month, 12 months a year for 20 years, for a total of \$24,000.  That means that the account earned approximately $\$46,200-\$24,000 = \$22,200$ in interest.
+\end{example}
+
+\begin{try}[http://izzomath.com/103text/finance/example4.2/story.html]
+If you deposit \$800 every year into a traditional IRA earning 4\% interest, how much will the account hold after 25 years?
+\end{try}
+
+%Because retirement accounts typically grow for long periods, they can experience rather dramatic growth, as seen in the last example.
+
+There is another common type of retirement account: the Roth IRA.  The idea behind a Roth IRA was originally proposed in 1989 by Senator William Roth of Delaware and established by the Taxpayer Relief Act of 1997.
+
+\begin{example}[https://www.youtube.com/watch?v=gqvXGP8vLxA]{Roth IRA}
+In a Roth IRA, unlike a traditional IRA, you pay taxes on contributions, but when you withdraw in retirement, withdrawals are tax-free.  If you deposit \$500 every quarter into a Roth IRA earning 3.75\% interest, how much will the account hold in 30 years?\\
+
+\marginnote{\bfseries Solution}
+Organize the given information:
+\begin{center}
+\begin{tabular}{r l l}
+$P$ & \$500 & The regular deposit\\
+$r$ & 0.0375 & 3.75\% annual rate\\
+$n$ & 4 & Deposits are made quarterly\\
+$t$ & 30 & Deposits are made for 30 years
+\end{tabular}
+\end{center}
+
+Putting it all together in the formula:
+\begin{align*}
+F &= \dfrac{\$500\left[\left(1+\dfrac{0.0375}{4}\right)^{(4)(30)}-1\right]}{\left(\dfrac{0.0375}{4}\right)} \approx \$110,086
+\end{align*}
+
+Notice that you deposited a total of \$60,000, which means that the account earned \$50,086 in interest, nearly as much as you deposited.
+\end{example}
+
+\begin{try}[http://izzomath.com/103text/finance/example4.3/story.html]
+If you deposit \$200 every month into a Roth IRA earning 5.5\% interest, how much will the account hold after 30 years?
+\end{try}
+\pagebreak
+
+The differences between traditional and Roth IRAs did not affect the calculations in the preceding examples, but we'll point them out here for the sake of the curious student.
+
+\checkoddpage
+\ifoddpage{
+\begin{adjustwidth}{-0.25in}{-1.75in}
+\begin{proc}{Traditional vs. Roth IRA}
+The most prominent difference between traditional and Roth IRAs concerns when the contributions are taxed: traditional IRAs defer taxation until contributions are withdrawn, while Roth IRAs are taxed as contributions are made.\\
+
+So when comparing the two, the question is this: do you expect tax rates to be higher now or when you retire?  The smart money is on tax rates increasing.  In addition to that, during retirement taxable income may be higher after the taxpayer loses the opportunity to deduct housing and education expenses and dependents are grown and gone.  Thus, Roth IRAs are popular since you can pay lower taxes now rather than deferring them until you'd have to pay more.\\
+
+Another major difference is that traditional IRAs require you to begin withdrawing at age 70.5, while Roth IRAs have no such restriction.  Because of this, Roth IRAs can be used to transfer wealth to inheritors, since they will not have to pay income taxes on withdrawals (but perhaps estate taxes) and can stretch the withdrawals out for years.\\
+
+The table below summarizes the comparison between traditional and Roth IRAs:
+\begin{center}
+\begin{tabular}{p{0.18\textwidth} | p{0.38\textwidth} p{0.38\textwidth}}
+& \textbf{Traditional IRA} & \textbf{Roth IRA}\\
+\hline
+\textbf{2014 Contribution Limits} & \$5,500 (if under age 50) & \$5,500 (if under age 50)\\
+& & \\
+\textbf{2014 Income Limits} & No limits & Single tax filers with adjusted gross income of less than \$129,000; married couples filing jointly with adjusted gross income of less than \$191,000\\
+& & \\
+\textbf{Taxing} & Tax deduction on contribution year; ordinary income taxes owed on withdrawals & No tax break for contributions; tax-free earnings and withdrawals in retirement\\
+& & \\
+\textbf{Withdrawing} & Withdrawals are tax-free and penalty-free beginning at age 59.5.  Distributions must begin at age 70.5; beneficiaries pay taxes on inherited IRAs & Contributions can be withdrawn at any time, tax-free and penalty-free.  After five years and age 59.5, all withdrawals are tax-free.  No withdrawals required during account holder's lifetime.\\
+\end{tabular}
+\end{center}
+
+One final note: both kinds of IRA allow first-time homebuyers to withdraw up to \$10,000 to pay for qualified housing costs.
+\end{proc}
+\end{adjustwidth}
+} \else{
+\begin{adjustwidth}{-1.75in}{-0.25in}
+\begin{proc}{Traditional vs. Roth IRA}
+The most prominent difference between traditional and Roth IRAs concerns when the contributions are taxed: traditional IRAs defer taxation until contributions are withdrawn, while Roth IRAs are taxed as contributions are made.\\
+
+So when comparing the two, the question is this: do you expect tax rates to be higher now or when you retire?  The smart money is on tax rates increasing.  In addition to that, during retirement taxable income may be higher after the taxpayer loses the opportunity to deduct housing and education expenses and dependents are grown and gone.  Thus, Roth IRAs are popular since you can pay lower taxes now rather than deferring them until you'd have to pay more.\\
+
+Another major difference is that traditional IRAs require you to begin withdrawing at age 70.5, while Roth IRAs have no such restriction.  Because of this, Roth IRAs can be used to transfer wealth to inheritors, since they will not have to pay income taxes on withdrawals (but perhaps estate taxes) and can stretch the withdrawals out for years.\\
+
+The table below summarizes the comparison between traditional and Roth IRAs:
+\begin{center}
+\begin{tabular}{p{0.18\textwidth} | p{0.38\textwidth} p{0.38\textwidth}}
+& \textbf{Traditional IRA} & \textbf{Roth IRA}\\
+\hline
+\textbf{2014 Contribution Limits} & \$5,500 (if under age 50) & \$5,500 (if under age 50)\\
+& & \\
+\textbf{2014 Income Limits} & No limits & Single tax filers with adjusted gross income of less than \$129,000; married couples filing jointly with adjusted gross income of less than \$191,000\\
+& & \\
+\textbf{Taxing} & Tax deduction on contribution year; ordinary income taxes owed on withdrawals & No tax break for contributions; tax-free earnings and withdrawals in retirement\\
+& & \\
+\textbf{Withdrawing} & Withdrawals are tax-free and penalty-free beginning at age 59.5.  Distributions must begin at age 70.5; beneficiaries pay taxes on inherited IRAs & Contributions can be withdrawn at any time, tax-free and penalty-free.  After five years and age 59.5, all withdrawals are tax-free.  No withdrawals required during account holder's lifetime.\\
+\end{tabular}
+\end{center}
+
+One final note: both kinds of IRA allow first-time homebuyers to withdraw up to \$10,000 to pay for qualified housing costs.
+\end{proc}
+\end{adjustwidth}
+} \fi
+
+\begin{example}[https://www.youtube.com/watch?v=TWZhZoh9TG4]{How Much Should You Save?}
+You want to have \$500,000 in your account when you retire in 35 years.  If your retirement account earns 5\% interest, how much should you deposit each month to reach your retirement goal?\\
+
+\marginnote{\bfseries Solution}
+Now everything except for $P$ is given, and that is what we are trying to determine.
+\begin{center}
+\begin{tabular}{r l l}
+$F$ & \$500,000 & The future value\\
+$r$ & 0.05 & 5\% annual rate\\
+$n$ & 12 & Deposits are made monthly\\
+$t$ & 35 & Deposits are made for 35 years
+\end{tabular}
+\end{center}
+
+Putting it all together in the formula:
+\begin{align*}
+\$500,000 &= \dfrac{P\left[\left(1+\dfrac{0.05}{12}\right)^{(12)(35)}-1\right]}{\left(\dfrac{0.05}{12}\right)}\\
+\$500,000 &= P(1136.092)\\
+\$440.11 &= P
+\end{align*}
+
+Having\marginnote{$(\$440)(12)(35) = \$184,846.20$} half a million dollars may sound like an unattainable goal, but by making regular deposits, it becomes possible.  Notice that in this case, you'll deposit a total of \$184,846, which means that the account earns\marginnote{$\$500,000 - \$184,846 = \$315,154$} \$315,154, or close to twice the amount that you deposit.
+\end{example}
+\vfill
+\pagebreak
+
+\begin{try}[http://izzomath.com/103text/finance/example4.4/story.html]
+You want to have \$800,000 in your account when you retire in 40 years.  If your retirement account earns 6.7\% interest, how much should you deposit each month to reach your retirement goal?
+\end{try}
+
+If there is one lesson to take away from this section, it is this: \textbf{START SAVING NOW!}  Save early and save often, and you'll be far ahead of the curve.  The next example drives this home; we'll consider two recent college graduates.  Emma learned her lesson and begins saving immediately, while Jason is overwhelmed by his expenses immediately as he begins to work and he neglects to save.  After 20 years, Jason decides to try to catch up.  Let's see how that works out (spoiler alert: Emma winds up better off).
+
+Suppose Jason and Emma graduate the same year and begin working in adjacent cubicles; they're each 23 years old, and they'll both work for 45 years.  Let's assume that both get a 4\% interest rate in their retirement accounts. 
+
+\begin{example}[https://www.youtube.com/watch?v=9hcZL9uCEoY]{Start Saving Early}
+\begin{enumerate}[(1)]
+\item If Emma begins saving \$400 every month right away and does so for 45 years, how much will her account hold when she retires?\\
+
+Use the savings annuity formula:
+\begin{align*}
+F &= \dfrac{\$400\left[\left(1+\dfrac{0.04}{12}\right)^{(12)(45)}-1\right]}{\left(\dfrac{0.04}{12}\right)}\\
+&\approx \$603,788
+\end{align*}
+
+\item If Jason begins saving 30 years later, and he saves \$1500 every month for 15 years, how much will his account hold when he retires?\\
+
+Use the savings annuity formula:
+\begin{align*}
+F &= \dfrac{\$1500\left[\left(1+\dfrac{0.04}{12}\right)^{(12)(15)}-1\right]}{\left(\dfrac{0.04}{12}\right)}\\
+&\approx \$369,136
+\end{align*}
+He puts away more than 3 times what Emma does each month, and yet he ends up far short of her total.
+
+\item How much would Jason have to save each month for 15 years to match Emma's final total?\\
+
+\begin{align*}
+\$603,788 &= \dfrac{P\left[\left(1+\dfrac{0.04}{12}\right)^{(12)(15)}-1\right]}{\left(\dfrac{0.04}{12}\right)}\\
+\$2454 &\approx P
+\end{align*}
+He'd have to save much, much more each month to catch up to Emma.
+
+\item Compare their contributions to their final balances.
+\begin{enumerate}[(a)]
+\item Emma contributes a total of $\$400 \times 12 \times 45 = \$216,000$, which means that her account earned \$387,788 in interest.
+\item Under Jason's first plan, he contributes \$270,000 (more than Emma, even though his final balance is much smaller), so he only earns \$99,136 in interest.
+\item With Jason's modified plan where he contributes \$2454 each month, he pays in a total of \$441,720, earning \$162,068 in interest.
+\end{enumerate}
+\end{enumerate} 
+Hopefully, the lesson is clear: start saving early!
+\end{example}
+\pagebreak
+
+\subsection{Payout Annuities}
+So far in this section, we've dealt with \textbf{savings annuities}, where you begin with nothing and make regular deposits that grow over time to a final balance.
+
+The other kind is a \textbf{payout annuity}, where you begin with a lump sum and make regular withdrawals (the money remaining in the account earns interest) and the account will be empty after a fixed amount of time.  We'll be determining the amount that you should withdraw each time in order to empty the account at the right time.
+
+Payout annuities are typically used after retirement.  Perhaps you have saved \$500,000 for retirement, and you want to take money out of the account each month for living expenses, and you want the money to last 20 years.  This is an example of a payout annuity.  Payout annuities are also often used when a large lump sum is paid out, such as with lottery winnings or lawsuit settlements.
+
+We'll leave out the details of deriving this formula, but essentially it involves setting the amount that a lump sum will grow to according to the compound interest formula equal to the amount that is paid out using the annuity formula.  If we solve that for the lump sum (we're omitting the derivation mostly because of this step), we find the payout annuity formula below.
+
+\begin{formula}{Payout Annuity}
+If a starting balance of $P$ is paid out in regular payments of $PMT$ from an annuity earning $r$ interest compounded $n$ times per year, and the payments are made $n$ times per year, the following relationship holds:
+\[P = \dfrac{PMT\left[1-\left(1+\dfrac{r}{n}\right)^{-nt}\right]}{\left(\dfrac{r}{n}\right)}\]
+Notice the negative exponent; be careful when entering that into your calculator.
+\end{formula}
+
+\begin{example}[https://www.youtube.com/watch?v=A2pKYPSXUbw]{Payout Annuity}
+After retiring, you want to be able to take \$1000 every month from your retirement account for 20 years.  If the account earns 6\% interest, how much will you need in your account when you retire?\\
+
+\marginnote{\bfseries Solution}
+Organize the given information:
+\begin{center}
+\begin{tabular}{r l l}
+$PMT$ & \$500 & The regular withdrawal\\
+$r$ & 0.06 & 6\% annual rate\\
+$n$ & 12 & Withdrawals are made monthly\\
+$t$ & 20 & Withdrawals are made for 20 years
+\end{tabular}
+\end{center}
+
+Putting it all together in the formula:
+\begin{align*}
+P &= \dfrac{\$1000\left[1-\left(1+\dfrac{0.06}{12}\right)^{-(12)(20)}\right]}{\left(\dfrac{0.06}{12}\right)} \approx \$139,581
+\end{align*}
+
+You'll need to have approximately \$139,600 in your account when you retire.  Notice that you'll withdraw \$240,000 (\$1000 for 240 months).  You're able to pull out more than you have at retirement because you don't withdraw it all at once, but take it out little by little as you need it, allowing the remainder to earn interest before you take it out.  This difference represents \$100,400 in interest earned during those 20 years of retirement.
+\end{example}
+
+\begin{try}[http://izzomath.com/103text/finance/example4.6/story.html]
+After retiring, you want to be able to take \$1500 every month from your retirement account for 15 years.  If the account earns 4.5\% interest, how much will you need in your account when you retire?
+\end{try}
+
+\begin{proc}{Calculator Note: Evaluating Negative Exponents}
+With these problems, you need to raise numbers to negative powers.  Most calculators have a separate button for negating a number that is different than the subtraction button.  Some calculators label this $\boxed{(-)}$\ , and some label it $\boxed{+/-}$\ .
+
+If your calculator has a multiline display, to calculate $1.005^{-240}$, you'd type something like $1.005 \boxed{\wedge}\ \boxed{(-)}\ 240$.
+
+If you have a scientific calculator that only displays a single number at a time, you will most likely need to hit the $\boxed{(-)}$ key after a number to negate it.  Thus, you'd type $1.005\ \boxed{y^x}\ 240\ \boxed{(-)}\ \boxed{=}\ $.
+
+Try it on your calculator and make sure that you get 0.302096 as your answer.
+\end{proc}
+
+Finally, let's turn this around and ask the other question: given a fixed amount in our account, how much can we withdraw in regular payments?
+
+\begin{example}[https://www.youtube.com/watch?v=BsqVTSoWOm8]{Withdrawing from a Payout Annuity}
+You expect to have \$500,000 in your IRA when you retire, and you want to be able to take monthly withdrawals for a total of 30 years.  If your account earns 8\% interest, how much will you be able to withdraw each month?\\
+
+\marginnote{\bfseries Solution}
+Organize the given information:
+\begin{center}
+\begin{tabular}{r l l}
+$P$ & \$500,000 & The starting balance\\
+$r$ & 0.08 & 8\% annual rate\\
+$n$ & 12 & Withdrawals are made monthly\\
+$t$ & 30 & Withdrawals are made for 30 years
+\end{tabular}
+\end{center}
+
+This time we want to find $PMT$:
+\begin{align*}
+\$500,000 &= \dfrac{PMT\left[1-\left(1+\dfrac{0.08}{12}\right)^{-(12)(30)}\right]}{\left(\dfrac{0.08}{12}\right)}\\
+\$500,000\marginnote{Note: if you don't round at this step, your answer should be \$3668.82} &= PMT(136.232)\\
+\$3670.21 &= PMT
+\end{align*}
+
+You can plan to withdraw \$3670.21 each month for 30 years.
+\end{example}
+
+\begin{try}[http://izzomath.com/103text/finance/example4.7/story.html]
+A donor gives \$100,000 to a university, and specifies that it is to be used to give annual scholarships for the next 20 years.  If the university can earn 4\% interest, how much can they give in scholarships each year?
+\end{try}
+
+\begin{exercises}
+\textit{In Exercises 1---6, a periodic deposit is made into an annuity with the given terms.  Find how much the annuity will hold at the end of the specified amount of time.}
+
+\pthree{\begin{center}\begin{tabular}{r l}
+Regular deposit & \$250\\
+Interest rate & 4\%\\
+Frequency & Monthly\\
+Time & 15 years\\
+Future value & ?
+\end{tabular}\end{center}}
+\pthree{\begin{center}\begin{tabular}{r l}
+Regular deposit & \$10\\
+Interest rate & 5\%\\
+Frequency & Daily\\
+Time & 12 years\\
+Future value & ?
+\end{tabular}\end{center}}
+\pthree{\begin{center}\begin{tabular}{r l}
+Regular deposit & \$2000\\
+Interest rate & 3\%\\
+Frequency & Yearly\\
+Time & 22 years\\
+Future value & ?
+\end{tabular}\end{center}}
+
+\pthree{\begin{center}\begin{tabular}{r l}
+Regular deposit & \$100\\
+Interest rate & 3.75\%\\
+Frequency & Weekly\\
+Time & 30 years\\
+Future value & ?
+\end{tabular}\end{center}}
+\pthree{\begin{center}\begin{tabular}{r l}
+Regular deposit & \$300\\
+Interest rate & 4.25\%\\
+Frequency & Monthly\\
+Time & 18 years\\
+Future value & ?
+\end{tabular}\end{center}}
+\pthree{\begin{center}\begin{tabular}{r l}
+Regular deposit & \$3500\\
+Interest rate & 2.85\%\\
+Frequency & Yearly\\
+Time & 28 years\\
+Future value & ?
+\end{tabular}\end{center}}
+
+
+\textit{In Exercises 7---12, find how much should be regularly deposited into an annuity with the given terms in order to have the specified final amount in the account.}
+
+\pthree{\begin{center}\begin{tabular}{r l}
+Regular deposit & ?\\
+Interest rate & 5\%\\
+Frequency & Monthly\\
+Time & 18 years\\
+Future value & \$50,000
+\end{tabular}\end{center}}
+\pthree{\begin{center}\begin{tabular}{r l}
+Regular deposit & ?\\
+Interest rate & 6\%\\
+Frequency & Weekly\\
+Time & 10 years\\
+Future value & \$27,000
+\end{tabular}\end{center}}
+\pthree{\begin{center}\begin{tabular}{r l}
+Regular deposit & ?\\
+Interest rate & 3.5\%\\
+Frequency & Yearly\\
+Time & 35 years\\
+Future value & \$200,000
+\end{tabular}\end{center}}
+
+\pthree{\begin{center}\begin{tabular}{r l}
+Regular deposit & ?\\
+Interest rate & 5.75\%\\
+Frequency & Monthly\\
+Time & 45 years\\
+Future value & \$500,000
+\end{tabular}\end{center}}
+\pthree{\begin{center}\begin{tabular}{r l}
+Regular deposit & ?\\
+Interest rate & 3.25\%\\
+Frequency & Weekly\\
+Time & 15 years\\
+Future value & \$75,000
+\end{tabular}\end{center}}
+\pthree{\begin{center}\begin{tabular}{r l}
+Regular deposit & ?\\
+Interest rate & 7.2\%\\
+Frequency & Yearly\\
+Time & 32 years\\
+Future value & \$60,000
+\end{tabular}\end{center}}
+
+\textit{In Exercises 13---15, you want to be able to withdraw the specified amount periodically from a payout annuity with the given terms.  Find how much the account needs to hold to make this possible.}
+
+\pthree{\begin{tabular}{r l}
+Regular withdrawal & \$1000\\
+Interest rate & 5\%\\
+Frequency & Monthly\\
+Time & 20 years\\
+Account balance & ?
+\end{tabular}}
+\pthree{\begin{tabular}{r l}
+Regular withdrawal & \$200\\
+Interest rate & 3\%\\
+Frequency & Weekly\\
+Time & 15 years\\
+Account balance & ?
+\end{tabular}}
+\pthree{\begin{tabular}{r l}
+Regular withdrawal & \$20,000\\
+Interest rate & 5.5\%\\
+Frequency & Yearly\\
+Time & 25 years\\
+Account balance & ?
+\end{tabular}}
+\pagebreak
+
+\textit{In Exercises 16---18, you expect to have the given amount in an account with the given terms.  Find how much you can withdraw periodically in order to make the account last the specified amount of time.}
+
+\pthree{\begin{center}\begin{tabular}{r l}
+Regular withdrawal & ?\\
+Interest rate & 4\%\\
+Frequency & Monthly\\
+Time & 18 years\\
+Account balance & \$300,000
+\end{tabular}\end{center}}
+\pthree{\begin{center}\begin{tabular}{r l}
+Regular withdrawal & ?\\
+Interest rate & 5\%\\
+Frequency & Weekly\\
+Time & 20 years\\
+Account balance & \$250,000
+\end{tabular}\end{center}}
+\pthree{\begin{center}\begin{tabular}{r l}
+Regular withdrawal & ?\\
+Interest rate & 2.85\%\\
+Frequency & Monthly\\
+Time & 30 years\\
+Account balance & \$1,000,000
+\end{tabular}\end{center}}
+
+\ptwo{You deposit \$200 each month into an account earning 3\% interest compounded monthly.
+\begin{enumerate}[(a)]
+\item How much will you have in the account in 30 years?
+\item How much total money will you put into the account?
+\item How much total interest will you earn?
+\end{enumerate}}
+\ptwo{You deposit \$1000 each year into an account earning 8\% interest compounded annually.
+\begin{enumerate}[(a)]
+\item How much will you have in the account in 10 years?
+\item How much total money will you put into the account?
+\item How much total interest will you earn?
+\end{enumerate}}
+
+\ptwo{Evelyn has \$500,000 saved for retirement in an account earning 6\% interest, compounded monthly.  How much will she be able to withdraw each month if she wants to take withdrawals for 20 years?}
+\ptwo{Luke already knows that he will have \$750,000 when he retires.  If he sets up a payout annuity for 30 years in an account paying 7\% interest, how much could the annuity provide each month?}
+
+\ptwo{Michael is planning for retirement, and he estimates that he'll want to be able to withdraw \$2500 each month for 30 years once he retires.  He opens a Roth IRA and finds investments that he expects to return 5\% interest compounded monthly.
+\begin{enumerate}[(a)]
+\item How much will he need to have in the account when he retires in order to meet his goal?
+\item How much will he have to deposit each month for the next 40 years in order to get this balance at retirement?
+\item How much interest will his deposits earn?
+\end{enumerate}}
+\ptwo{Rachel is planning for retirement, and she estimates that she'll want to be able to withdraw \$1800 each month for 25 years once she retires.  She opens a Roth IRA and finds investments that she expects to return 3.75\% interest compounded monthly.
+\begin{enumerate}[(a)]
+\item How much will she need to have in the account when she retires in order to meet her goal?
+\item How much will she have to deposit each month for the next 40 years in order to get this balance at retirement?
+\item How much interest will her deposits earn?
+\end{enumerate}}
+\end{exercises}

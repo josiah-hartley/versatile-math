@@ -1,0 +1,577 @@
+\setcounter{ExampleCounter}{1}
+While taxes are not typically greeted with great enthusiasm, they are a necessary part of life.  Governments---whether city, county, state, or federal---depend on tax revenue to fund their projects.  For instance, gasoline taxes fund road maintenance, property taxes fund schools, and federal income taxes fund thousands of initiatives from the Food and Drug Administration to the military.  Our focus in this section will be on the federal income tax, but first we'll look at a few different kinds of tax.
+
+Typically, taxes are calculated as a percentage of a sale (we've already dealt with sales tax in the previous section), the percentage of one's assets (as with an estate tax or a property tax), or the percentage of one's income (as with the federal or state income tax).
+
+\begin{proc}{Effective Tax Rate}
+When taxes are given as an amount rather than a percentage, we can calculate the \textbf{effective tax rate} in order to compare it to other taxes on the same basis.
+\end{proc}
+
+\begin{example}[https://www.youtube.com/watch?v=QjjpqBp5d6w]{Property Taxes}
+Joan paid \$3,200 in property taxes on her house, which was valued at \$215,000 last year.  What is the effective property tax rate?\\
+
+\marginnote{\bfseries Solution}
+The equivalent percentage is \[\dfrac{3,200}{215,000} = 0.01488 = 1.49\%\]
+\end{example}
+
+\begin{example}[https://www.youtube.com/watch?v=tyNOEV7Q7xg]{Gasoline Tax}
+\marginnote{\includegraphics[scale=0.07]{GasPump1}}
+If the state gas tax is 30.3 cents per gallon, and the pre-tax cost of gasoline is \$2.42 per gallon, what is the gas tax rate?\\
+
+The equivalent percentage is \[\dfrac{\$0.303}{\$2.42} = 12.52\%\]
+\end{example}
+
+\begin{try}[http://izzomath.com/103text/finance/example2.1/story.html]
+If you pay \$35.75 in sales tax on a \$550 purchase, what is the effective sales tax?
+\end{try}
+
+Some taxes---like these examples of sales tax, property tax, and gas tax---are a \textbf{flat tax}, since the tax percentage is constant no matter what the amount of the sale or the value of the property.  Many taxes---most notably, federal and state income taxes---are not flat, but instead are \textbf{progressive taxes}, meaning that the tax percentage increases as the taxpayer's income increases, so taxpayers who earn more pay a higher tax rate than those who earn less.  The reverse situation is a \textbf{regressive tax}, where the tax rate decreases as the taxed amount increases.
+
+\begin{formula}{Tax Categories}
+\begin{itemize}
+\item \marginnote{ex: sales tax}A \textbf{flat tax} charges a consistent percentage, no matter what the taxed amount is.
+\item \marginnote{ex: income tax}A \textbf{progressive tax} charges a higher percentage for higher taxed amounts.
+\item A \textbf{regressive tax} charges a lower percentage for higher taxed amounts.
+\end{itemize}
+\end{formula}
+\vfill
+\pagebreak
+
+Now let's talk about the U.S. federal income tax, the most prominent example of a progressive tax that you're likely to encounter.  Each taxpayer's earnings are split into \textbf{tax brackets}, and each tax bracket is taxed at a certain rate.  So for instance, in 2014, a single taxpayer's first \$9075 were taxed at 10\%, and every dollar from number 9076 up to dollar number 36,900 was taxed at 15\%.  To figure out how much someone owes, we need to split their taxable income into these brackets (assume this taxpayer earns \$89,350 per year):
+
+\begin{center}
+\includegraphics[scale=0.07]{Dollars1}
+
+\begin{tcolorbox}[colframe=green!5,colback=green!5,sharp corners=all]
+\begin{center}
+\$89,350
+
+$\overbrace{
+\begin{tabular}{r | c c c}
+& & & \\
+\marginnote{Split money into brackets}Dollars & 1 -- 9075 & 9076 -- 36,900 & 36,901 -- 89,350\\
+& & & \\
+Tax Rate & 10\% & 15\% & 25\%\\
+& & & \\
+\marginnote{Multiply the amount in each }Calculation & \$9075(0.1) & (\$36,900 -- \$9075)(0.15) & (\$89,350 -- \$36,900)(0.25)\\
+& & & \\
+\marginnote{bracket by the tax rate}& = \$907.50 & = \$4173.75 & = \$13,112.50
+\end{tabular}
+}$
+\vspace{0.25in}
+
+This taxpayer pays $\$907.50 + \$4,173.75 + \$13,112.50 = \$18,193.75$ in taxes.
+
+\end{center}
+\end{tcolorbox}
+\end{center}
+
+No matter whether you make \$30,000 a year or \$300,000 per year, your first \$9075 are taxed at the same rate; it's the later dollars that get taxed at a higher rate, making this a progressive tax.
+
+The tax rates for each bracket may change from year to year, but the process remains the same:
+\begin{enumerate}
+\item Divide the taxable income into these brackets, putting each dollar into the appropriate bracket until you get to the end of the income (so if the taxpayer's income in the example above was \$32,000, we would have stopped in the second bracket and not spilled over into the third).
+\item Multiply the amount in each bracket by the tax rate for that bracket.
+\item Add up the tax amounts from each bracket to find the total income tax owed.
+\end{enumerate}
+
+The following table is the marginal tax table for 2014, showing the tax brackets and associated tax rate for each.
+\vspace{0.25in}
+
+\label{Tax Table}
+\checkoddpage
+\ifoddpage{
+\begin{adjustwidth}{-0.25in}{-1.5in}
+\begin{center}
+\begin{tabular}{| p{0.85in} | p{1.35in} | p{1.35in} | p{1.5in} | p{1.35in} |}
+\hline
+\cellcolor{brown!25}Tax Rate & \cellcolor{brown!25}Single & \cellcolor{brown!25}Married Filing Separately & \cellcolor{brown!25}Married Filing Jointly & \cellcolor{brown!25}Head of Household\\
+\hline
+\cellcolor{brown!25}10\% & up to \$9,075 & up to \$9,075 & up to \$18,150 & up to \$12,950\\
+\hline
+\cellcolor{brown!25}15\% & \$9,075 to \$36,900 & \$9,075 to \$36,900 & \$18,150 to \$73,800 & \$12,950 to \$49,400\\
+\hline
+\cellcolor{brown!25}25\% & \$36,900 to \$89,350 & \$36,900 to \$74,425 & \$73,800 to \$148,850 & \$49,400 to \$127,550\\
+\hline
+\cellcolor{brown!25}28\% & \$89,350 to \$186,350 & \$74,425 to \$113,425 & \$148,850 to \$226,850 & \$127,550 to \$206,600\\
+\hline
+\cellcolor{brown!25}33\% & \$186,350 to \$405,100 & \$113,425 to \$202,550 & \$226,850 to \$405,100 & \$206,600 to \$405,100\\
+\hline
+\cellcolor{brown!25}35\% & \$405,100 to \$406,750 & \$202,550 to \$228,800 & \$405,100 to \$457,600 & \$405,100 to \$432,200\\
+\hline
+\cellcolor{brown!25}39.6\% & more than \$406,750 & more than \$228,800 & more than \$457,600 & more than \$432,200\\
+\hline
+\cellcolor{brown!25}Standard Deduction & \$6,200 & \$6,200 & \$12,400 & \$9,100\\
+\hline
+\cellcolor{brown!25}Exemptions (per person) & \$3950 & \$3950 & \$3950 & \$3950\\
+\hline
+\end{tabular}
+\end{center}
+\end{adjustwidth}
+\vspace{0.25in}}
+\else{\begin{adjustwidth}{-1.75in}{-0.25in}
+\begin{center}
+\begin{tabular}{| p{0.85in} | p{1.35in} | p{1.35in} | p{1.5in} | p{1.35in} |}
+\hline
+\cellcolor{brown!25}Tax Rate & \cellcolor{brown!25}Single & \cellcolor{brown!25}Married Filing Separately & \cellcolor{brown!25}Married Filing Jointly & \cellcolor{brown!25}Head of Household\\
+\hline
+\cellcolor{brown!25}10\% & up to \$9,075 & up to \$9,075 & up to \$18,150 & up to \$12,950\\
+\hline
+\cellcolor{brown!25}15\% & \$9,075 to \$36,900 & \$9,075 to \$36,900 & \$18,150 to \$73,800 & \$12,950 to \$49,400\\
+\hline
+\cellcolor{brown!25}25\% & \$36,900 to \$89,350 & \$36,900 to \$74,425 & \$73,800 to \$148,850 & \$49,400 to \$127,550\\
+\hline
+\cellcolor{brown!25}28\% & \$89,350 to \$186,350 & \$74,425 to \$113,425 & \$148,850 to \$226,850 & \$127,550 to \$206,600\\
+\hline
+\cellcolor{brown!25}33\% & \$186,350 to \$405,100 & \$113,425 to \$202,550 & \$226,850 to \$405,100 & \$206,600 to \$405,100\\
+\hline
+\cellcolor{brown!25}35\% & \$405,100 to \$406,750 & \$202,550 to \$228,800 & \$405,100 to \$457,600 & \$405,100 to \$432,200\\
+\hline
+\cellcolor{brown!25}39.6\% & more than \$406,750 & more than \$228,800 & more than \$457,600 & more than \$432,200\\
+\hline
+\cellcolor{brown!25}Standard Deduction & \$6,200 & \$6,200 & \$12,400 & \$9,100\\
+\hline
+\cellcolor{brown!25}Exemptions (per person) & \$3950 & \$3950 & \$3950 & \$3950\\
+\hline
+\end{tabular}
+\end{center}
+\end{adjustwidth}
+\vspace{0.25in}}
+\fi
+
+Note that there are two rows at the end of the table that contain terms we haven't defined yet; fear not, we'll get to these momentarily.  Also, the term `Head of Household' simply means a single individual who is paying more than half the cost of supporting a child or parent.
+\vfill
+\pagebreak
+
+\begin{example}[https://www.youtube.com/watch?v=p7ofzArnTxo]{Income Tax}
+Using the tax table above, how much would a married taxpayer who files separately from their spouse owe on a taxable income of \$98,400?\\
+
+\marginnote{\bfseries Solution}
+First, note that we'll be using the second column, since this taxpayer is married, filing separately.  Next, divide the \$98,400 into the appropriate brackets:
+
+\begin{center}
+\$98,400
+
+$\overbrace{
+\begin{tabular}{r | c c c c}
+& & & \\
+Dollars & 1 -- 9075 & 9076 -- 36,900 & 36,901 -- 74,425 & 74,426 -- 98,400\\
+& & & \\
+Tax Rate & 10\% & 15\% & 25\% & 28\%\\
+\end{tabular}
+}$
+\end{center}
+
+Then simply multiply the amount in each bracket by that tax rate and add up these totals:
+\begin{align*}
+\textrm{Tax Owed } &= (9,075)(0.1) + (36,900-9,075)(0.15)\\ &\hspace{0.5in} + (74,425-36,900)(0.25) + (98,400-74,425)(0.28)\\ &= \$21,175.50
+\end{align*}
+\end{example}
+
+\begin{try}[http://izzomath.com/103text/finance/example2.3/story.html]
+Using the 2014 marginal tax table, how much would a head of household owe on a taxable income of \$77,000?
+\end{try}
+
+We've used the term ``taxable income'' several times without defining it, since it is fairly self-explanatory.  However, a big part of the complexity of income taxes has to do with the terminology, so let's define a few terms here:
+
+\begin{formula}{Income Tax Terms}
+\begin{itemize}
+\item \textbf{Gross Income:} Total yearly income.  This is the number the taxpayer starts with, the total amount earned, including wages, tips, capital gains, and unemployment.\marginnote{\centering\bfseries Gross income}
+\item The following three are deducted from the gross income:
+\begin{itemize}
+\item \marginnote{\centering $-$}\textbf{Adjustments:} This category includes things like student loan interest, moving expenses, health insurance expenses, and alimony.\marginnote{\centering Adjustments}
+\item \marginnote{\centering $-$}\textbf{Exemptions:} A fixed amount determined for each year and listed on the marginal tax table.  \marginnote{\centering Exemptions}Each taxpayer gets one exemption for themselves, and one exemption for each dependent.\marginnote{\centering $-$}
+\item \marginnote{\centering Deductions}\textbf{Deductions:} The taxpayer can choose between two options:
+\begin{enumerate}
+\item Take the standard deduction.  This is another fixed amount listed on the marginal tax table.\marginnote{\centering $=$}
+\item Calculate an itemized deduction.  This includes things like interest on a home mortgage, charitable donations, and property taxes.
+\end{enumerate}
+\marginnote{\centering\bfseries Taxable income}Each taxpayer picks whichever one is higher, thus taking more off of their gross income.\marginnote{\centering $\downarrow$}
+\end{itemize}
+\item \marginnote{\centering Initial Tax Owed}\textbf{Taxable Income:} This is the income that is used, like in the previous examples, with the marginal tax table to calculate the tax that is owed.\marginnote{\centering $-$}
+\item \marginnote{\centering\bfseries Tax credits}\textbf{Tax Credits:} These are deducted, not from the income, but from the tax owed.  \marginnote{\centering $=$}They include things, like child care, education credits, or energy savings.  Typically tax credits are used to reward behavior that the administration at the time wants to incentivize.\marginnote{\centering\bfseries Final Tax Owed}
+\end{itemize}
+\end{formula}
+\vfill
+\pagebreak
+
+Essentially, it all begins with the gross income, from which the adjustments, exemptions, and deductions are whittled away, leaving a smaller amount as the taxable income (this works in the taxpayer's favor, obviously).  After taxes are calculated on this taxable income using the marginal tax table like the one on page \pageref{Tax Table}, tax credits are deducted from that answer, leaving the final taxes owed.
+
+Thus, in the actual calculation, the adjustments, exemptions, and deductions are treated the same way; the only difference is in what each term means and what kinds of spending fall under each category.  In the examples that we'll see, the adjustments and deductions are listed clearly, but exemptions are not listed; you'll need to remember to account for exemptions, depending on how many dependents a particular taxpayer has.
+
+\begin{example}[https://www.youtube.com/watch?v=_kXpgV9IAng]{Tax Calculation}
+Use the 2014 marginal tax table on page \pageref{Tax Table} to calculate the tax owed by a single woman with no dependents whose details are given below.
+\begin{center}
+\begin{tabular}{r l}
+Gross income: & \$65,000\\
+Adjustments: & \$2000\\
+Deductions: & \$3000: charitable donations\\
+& \$1500: theft loss\\
+& \$300: cost of tax preparation\\
+Tax credit: & \$500: energy-efficient appliances
+\end{tabular}
+\end{center}
+
+\marginnote{\bfseries Solution}Start by subtracting the adjustments, exemption, and deductions from the gross income:
+\begin{alignat*}{7}\marginnote{Find the taxable income}
+&\textrm{Gross income } &&- \textrm{ Adjustments } &&- \textrm{ Exemptions } &&- \textrm{ Deductions }\\
+&= \$65,000 &&- \$2000 &&- \$3950 &&- \$6200\\
+&= \$52,850
+\end{alignat*}
+
+Notice that rather than using the itemized deductions, she chose the standard deduction, since it was larger than the sum of the itemized deductions.
+
+Next, take the taxable income and split it into the marginal categories, then calculate the tax owed from each bracket:
+\begin{center}
+\$52,850\marginnote{Divide the taxable income into brackets}
+
+$\overbrace{
+\begin{tabular}{r | c c c}
+& & & \\
+Dollars & 1 -- 9075 & 9076 -- 36,900 & 36,901 -- 52,850\\
+%& & & \\
+Tax Rate & 10\% & 15\% & 25\%\\
+\end{tabular}
+}$
+\end{center}
+\begin{align*}\marginnote{Multiply the amount in each bracket by that tax rate}
+\textrm{Tax Owed } &= (9,075)(0.1) + (36,900-9,075)(0.15)\\ &\hspace{0.5in} + (52,850-36,900)(0.25)\\ &= \$9068.75
+\end{align*}
+
+Finally, subtract the tax credit from this initial tax calculation to find the final amount that she owes:
+
+\marginnote{Subtract the tax credit}\[\textrm{Final Tax Owed } = \$9068.75 - \$500 = \$8568.75\]
+\end{example}
+
+\begin{try}[http://izzomath.com/103text/finance/example2.4/story.html]
+Use the 2014 marginal tax table to calculate the tax owed by a married couple with no dependents filing jointly whose details are given below.
+\begin{center}
+\begin{tabular}{r l}
+Gross income: & \$74,000\\
+Adjustments: & \$1500\\
+Deductions: & \$5500: charitable donations\\
+& \$150: cost of tax preparation\\
+Tax credit: & \$700: earned income tax credit
+\end{tabular}
+\end{center}
+\end{try}
+\vfill
+\pagebreak
+
+\checkoddpage
+\ifoddpage{
+\begin{adjustwidth}{0in}{-1.25in}
+\begin{proc}{Tax Withholding}
+During World War II, when the U.S. government was in dire need of tax revenue in order to avoid the rampant inflation that occurred during World War I, the IRS began to investigate tax withholding.  Rather than collecting taxes at the end of the year, they began to withhold taxes from workers' paychecks throughout the year, and then make up the difference at the end, either by a refund or an extra tax payment.  Milton Friedman, who won the 1976 Nobel Prize in economics, helped to formulate this plan.\\
+
+New employees fill out a W-4 form, which is intended to calculate as accurately as possible how much they'll owe in taxes, so that the correct amount can be collected.  Many people like the idea of overestimating, because if more is withheld throughout the year, they receive a huge refund check.  However, this is not actually a good policy, since in effect they are giving the government an interest-free loan for the entire year with no strings attached.
+\end{proc}
+\end{adjustwidth}
+} \else{
+\begin{adjustwidth}{-1.25in}{0in}
+\begin{proc}{Tax Withholding}
+During World War II, when the U.S. government was in dire need of tax revenue in order to avoid the rampant inflation that occurred during World War I, the IRS began to investigate tax withholding.  Rather than collecting taxes at the end of the year, they began to withhold taxes from workers' paychecks throughout the year, and then make up the difference at the end, either by a refund or an extra tax payment.  It was Milton Friedman, who won the 1976 Nobel Prize in economics, who helped to formulate this plan.\\
+
+New employees fill out a W-4 form, which is intended to calculate as accurately as possible how much they'll owe in taxes, so that the correct amount can be collected.  Many people like the idea of overestimating, because if more is withheld throughout the year, they receive a huge refund check.  However, this is not actually a good policy, since in effect they are giving the government an interest-free loan for the entire year with no strings attached.
+\end{proc}
+\end{adjustwidth}
+} \fi
+
+\begin{example}[https://www.youtube.com/watch?v=VeMJEVdRfMk]{Tax Calculation}
+Use the 2014 marginal tax table on page \pageref{Tax Table} to calculate the tax owed by a head of household with three dependents whose details are given below.
+\begin{center}
+\begin{tabular}{r l}
+Gross income: & \$58,000\\
+Adjustments: & \$2300\\
+Deductions: & none\\
+Tax credit: & none
+\end{tabular}
+\end{center}
+
+\marginnote{\bfseries Solution}Start by subtracting the adjustments, exemption, and deductions from the gross income:
+\begin{alignat*}{7}\marginnote{Find the taxable income}
+&\textrm{Gross income } &&- \textrm{ Adjustments } &&- \textrm{ Exemptions } &&- \textrm{ Deductions }\\
+&= \$58,000 &&- \$2300 &&- (4)\$3950 &&- \$6200\\
+&= \$33,700
+\end{alignat*}
+
+Again, we use the standard deduction.  Notice that this time, there are four exemptions, one for the taxpayer and one for each of the dependents.
+
+Next, take the taxable income and split it into the marginal categories, then calculate the tax owed from each bracket:
+\begin{center}
+\$33,700\marginnote{Divide the taxable income into brackets}
+
+$\overbrace{
+\begin{tabular}{r | c c}
+& & \\
+Dollars & 1 -- 9075 & 9076 -- 33,700\\
+%& &  \\
+Tax Rate & 10\% & 15\%\\
+\end{tabular}
+}$
+\end{center}
+\begin{align*}\marginnote{Multiply the amount in each bracket by that tax rate}
+\textrm{Tax Owed } &= (9,075)(0.1) + (33,700-9,075)(0.15)\\ &= \$4601.25
+\end{align*}
+
+There are no tax credits, so this is the final tax owed.
+\end{example}
+
+\begin{exercises}
+
+\pthree{A \line(1,0){75} \ is a tax at a consistent rate.}
+\pthree{A \line(1,0){75} \ is a tax for which the rate increases for higher taxed amounts}
+\pthree{A \line(1,0){75} \ is a tax for which the rate decreases for higher taxed amounts}
+
+\pthree{If the property taxes are \$1800 on a home valued at \$140,000, what is the effective tax rate?}
+\pthree{In state A, the gas tax is 28 cents per gallon, where the average pre-tax cost of gas is \$2.58 per gallon.  In state B, the gas tax is 25 cents per gallon, where the average pre-tax cost of gas is \$2.50.  Which state has a lower gas tax rate?}
+\pthree{If the sales tax is \$16.05 on a purchase of \$214, what is the sales tax rate?}
+
+\noindent \textit{For problems 7--14, use the marginal tax table on page \pageref{Tax Table} to calculate the tax owed by each taxpayer.}
+
+\ptwo{\\
+\begin{tabular}{r l}
+Taxpayer: & Single\\
+Gross income: & \$75,000\\
+Dependents: & 2\\
+Adjustments: & \$2000\\
+Deductions: & \$28,000: mortgage interest\\
+& \$4500: property taxes\\
+& \$2000: charitable donations\\
+& \$300: cost of tax preparation\\
+Tax credit: & \$800
+\end{tabular}}
+\ptwo{\\
+\begin{tabular}{r l}
+Taxpayer: & Single\\
+Gross income: & \$60,000\\
+Dependents: & none\\
+Adjustments: & \$1400\\
+Deductions: & \$15,000: mortgage interest\\
+& \$2000: property taxes\\
+& \$3000: charitable donations\\
+Tax credit: & \$1300
+\end{tabular}}
+
+\ptwo{\\
+\begin{tabular}{r l}
+Taxpayer: & Married, filing separately\\
+Gross income: & \$85,500\\
+Dependents: & 1\\
+Adjustments: & \$4000\\
+Deductions: & \$5000: charitable donations\\
+& \$3750: state taxes\\
+Tax credit: & \$750
+\end{tabular}}
+\ptwo{\\
+\begin{tabular}{r l}
+Taxpayer: & Married, filing separately\\
+Gross income: & \$52,000\\
+Dependents: & none\\
+Adjustments: & \$3300\\
+Deductions: & \$4500: charitable donations\\
+& \$1500: theft loss\\
+& \$1800: state taxes\\
+Tax credit: & \$1400
+\end{tabular}}
+
+\ptwo{\\
+\begin{tabular}{r l}
+Taxpayer: & Married, filing jointly\\
+Gross income: & \$104,000\\
+Dependents: & 4\\
+Adjustments: & \$6000\\
+Deductions: & \$18,000: mortgage interest\\
+& \$5300: property taxes\\
+& \$4800: state taxes\\
+Tax credit: & none
+\end{tabular}}
+\ptwo{\\
+\begin{tabular}{r l}
+Taxpayer: & Married, filing jointly\\
+Gross income: & \$93,000\\
+Dependents: & none\\
+Adjustments: & \$5500\\
+Deductions: & \$24,000: mortgage interest\\
+& \$3700: property taxes\\
+& \$3650: state taxes\\
+Tax credit: & none
+\end{tabular}}
+
+\ptwo{\\
+\begin{tabular}{r l}
+Taxpayer: & Head of Household\\
+Gross income: & \$25,000\\
+Dependents: & 3\\
+Adjustments: & none\\
+Deductions: & none\\
+Tax credit: & \$200
+\end{tabular}}
+\ptwo{\\
+\begin{tabular}{r l}
+Taxpayer: & Head of Household\\
+Gross income: & \$61,000\\
+Dependents: & 4\\
+Adjustments: & \$1800\\
+Deductions: & \$15,000: mortgage interest\\
+& \$2200: property taxes\\
+& \$2150: state taxes\\
+Tax credit: & none
+\end{tabular}}
+\vfill
+\pagebreak
+
+\pone{\textbf{Project: Flat Tax, Modified Flat Tax, and Progressive Tax}
+
+Many people have proposed various revisions to the income tax collection in the U.S.  Some, for example (including Milton Friedman), have claimed that a flat tax would be fairer.  Others call for revisions to how different types of income are taxed.  This project is for you to investigate this idea.\\
+
+Imagine the country is made up of 100 households.  The federal government needs to collect \$800,000 in income taxes to be able to function (this is roughly proportional to the actual U.S. population and tax needs, but using smaller, more manageable numbers).  The population consists of 6 groups:
+\begin{center}
+\begin{tabular}{r l}
+Group A: & 20 households that earn \$12,000 each\\
+Group B: & 20 households that earn \$29,000 each\\
+Group C: & 20 households that earn \$50,000 each\\
+Group D: & 20 households that earn \$79,000 each\\
+Group E: & 15 households that earn \$129,000 each\\
+Group F: & 5 households that earn \$295,000 each
+\end{tabular}
+\end{center}
+We are going to determine new income tax rates.
+
+\paragraph{Proposal A} The first proposal we'll consider is a flat tax --- one where every income group is taxed at the same percentage rate.
+\begin{enumerate}[1)]
+\item Determine the total income for the population.
+\vspace{1in}
+
+\item Determine what flat tax rate would be necessary to collect enough money.
+\vspace{1in}
+\end{enumerate}
+
+\paragraph{Proposal B} The second proposal we'll consider is a modified flat-tax plan, where everyone only pays taxes on any income over \$20,000.  So everyone is Group A will pay no taxes, for instance, and everyone in Group B will pay taxes only on \$9,000.
+\begin{enumerate}[1)]
+\setcounter{enumi}{2}
+\item Determine the total \textit{taxable} income for the population.
+\vspace{1in}
+
+\item Determine what flat tax rate would be necessary to collect enough money in this modified system.
+\end{enumerate}
+}
+\vfill
+\pagebreak
+
+\begin{minipage}[t]{\textwidth}
+\begin{enumerate}[1)]
+\setcounter{enumi}{4}
+\item Complete the table below for both plans.
+\end{enumerate}
+
+\begin{center}
+\begin{tabular}{|c | p{0.75in} | p{1.1in} | p{0.85in} | p{1.1in} | p{0.85in} |}
+\hline
+\multicolumn{2}{|c|}{} & \multicolumn{2}{c|}{Flat Tax Plan} & \multicolumn{2}{c|}{Modified Flat Tax Plan}\\
+\hline
+Group & Income per Household & Income Tax per Household & Income After Taxes & Income Tax per Household & Income After Taxes\\
+\hline
+& & & & & \\
+A & \$12,000 & & & & \\
+& & & & & \\
+\hline
+& & & & & \\
+B & \$29,000 & & & & \\
+& & & & & \\
+\hline
+& & & & & \\
+C & \$50,000 & & & & \\
+& & & & & \\
+\hline
+& & & & & \\
+D & \$79,000 & & & & \\
+& & & & & \\
+\hline
+& & & & & \\
+E & \$129,000 & & & & \\
+& & & & & \\
+\hline
+& & & & & \\
+F & \$295,000 & & & & \\
+& & & & & \\
+\hline
+\end{tabular}
+\end{center}
+
+\paragraph{Proposal C} The third proposal we'll consider is a progressive tax, where lower income groups are taxed at a lower percentage rate and higher income groups are taxed at a higher percentage rate.  For simplicity, we're going to assume that a household is taxed at the same rate on \textit{all} their income.
+\begin{enumerate}[1)]
+\setcounter{enumi}{5}
+\item Set progressive tax rates for each income group to bring in enough money.  There is no single right answer here --- just make sure you bring in enough money (the total tax must add up to at least \$800,000)!\\
+\begin{tabular}{|c | p{0.75in} | p{0.9in} | p{1.1in} | p{1.3in} | p{1.3in} |}
+\hline
+Group & Income per Household & Tax Rate (\%) & Income Tax per Household & Total Tax Collected for All Households & Income After Taxes per Household\\
+\hline
+& & & & & \\
+A & \$12,000 & & & & \\
+& & & & & \\
+\hline
+& & & & & \\
+B & \$29,000 & & & & \\
+& & & & & \\
+\hline
+& & & & & \\
+C & \$50,000 & & & & \\
+& & & & & \\
+\hline
+& & & & & \\
+D & \$79,000 & & & & \\
+& & & & & \\
+\hline
+& & & & & \\
+E & \$129,000 & & & & \\
+& & & & & \\
+\hline
+& & & & & \\
+F & \$295,000 & & & & \\
+& & & & & \\
+\hline
+\end{tabular}
+\end{enumerate}
+\end{minipage}
+
+\begin{minipage}[t]{\textwidth}
+\begin{enumerate}[1)]
+\setcounter{enumi}{6}
+\item Discretionary income is the income people have left over after paying for necessities like rent, food, transportation, etc.  The cost of basic expenses does increase with income, since housing and car costs are higher.  However, these increases are usually not proportional to the increase in income.  For each income group, estimate their essential expenses and calculate their discretionary income.  Then compute the effective tax rate for each plan relative to discretionary income rather than income.
+\begin{center}
+\begin{tabular}{|c | p{0.75in} | p{1.3in} | p{0.75in} | p{1in} | p{1in} |}
+\hline
+Group & Income per Household & Discretionary Income (estimated) & Effective Rate, Flat & Effective Rate, Modified & Effective Rate, Progressive\\
+\hline
+& & & & & \\
+A & \$12,000 & & & & \\
+& & & & & \\
+\hline
+& & & & & \\
+B & \$29,000 & & & & \\
+& & & & & \\
+\hline
+& & & & & \\
+C & \$50,000 & & & & \\
+& & & & & \\
+\hline
+& & & & & \\
+D & \$79,000 & & & & \\
+& & & & & \\
+\hline
+& & & & & \\
+E & \$129,000 & & & & \\
+& & & & & \\
+\hline
+& & & & & \\
+F & \$295,000 & & & & \\
+& & & & & \\
+\hline
+\end{tabular}
+\end{center}
+
+\item Which plan seems the most fair to you?  Which plan seems the least fair to you?  Why?
+\end{enumerate}
+\end{minipage}
+\end{exercises}
